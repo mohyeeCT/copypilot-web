@@ -11,6 +11,14 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v2.7',
+    date: '20 May 2026',
+    title: 'Saved API credentials',
+    description: 'New Credentials card in Settings. Save your AI provider key, DataForSEO login/password, and Jina API key once. Every new job pre-fills all fields automatically. Keys are stored server-side and never returned to the browser. Update or remove at any time.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
     version: 'v2.6',
     date: '20 May 2026',
     title: 'Keyword override per row',
