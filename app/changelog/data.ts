@@ -11,6 +11,14 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v2.6',
+    date: '20 May 2026',
+    title: 'Keyword override per row',
+    description: 'Expand any result row and a keyword bar shows the selected keyword with a pencil icon. Click to edit, type a new keyword, then click "Re-run with this keyword" to regenerate that row using your keyword instead of the GSC-selected one. Bypasses the keyword scoring pipeline entirely for that row.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
     version: 'v2.5',
     date: '20 May 2026',
     title: 'FAQ inline editing',
