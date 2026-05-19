@@ -11,6 +11,22 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v2.5',
+    date: '20 May 2026',
+    title: 'FAQ inline editing',
+    description: 'Edit individual Q/A pairs directly in the result cards before downloading. Pencil icon per FAQ, click to turn question and answer into textareas, Save to confirm or X to discard. Edited indicator shown on saved items. Edits are reflected in the CSV download.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
+    version: 'v2.4',
+    date: '20 May 2026',
+    title: 'Job status summary on dashboard',
+    description: 'Completed jobs now show a row summary instead of a plain count: X ok in green and Y failed in red. Running and other statuses still show the plain completed/total count.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
     version: 'v2.3',
     date: '19 May 2026',
     title: 'Job duplication',
