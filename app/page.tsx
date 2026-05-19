@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'CopyPilot — AI-powered SEO copy tools',
+  title: 'CopyPilot - AI-powered SEO copy tools',
   description: 'Generate FAQ sections, meta copy, page intros and full page copy at scale. Built for SEO teams and agencies.',
 }
 
