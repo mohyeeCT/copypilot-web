@@ -11,6 +11,22 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v1.31',
+    date: '19 May 2026',
+    title: 'Landing page',
+    description: 'Built copypilot.app landing page. Hero with animated fade-in, tools suite showing FAQ Copy live and Meta Copy / Page Intro / Page Copy as coming soon, bottom CTA, footer. Matches dark theme of the FAQ tool.',
+    type: 'feature' as const,
+    tool: 'Platform' as const,
+  },
+  {
+    version: 'v1.30',
+    date: '19 May 2026',
+    title: 'Public changelog at copypilot.app/changelog',
+    description: 'Created copypilot-web project for the root domain. Changelog page at copypilot.app/changelog lists all versions as a static page matching the dark theme. Changelog moved from Notion to Craft and now also lives as a public static page.',
+    type: 'feature' as const,
+    tool: 'Platform' as const,
+  },
+  {
     version: 'v1.29',
     date: '19 May 2026',
     title: 'Live progress steps',
