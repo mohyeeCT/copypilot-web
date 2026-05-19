@@ -11,6 +11,38 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v2.3',
+    date: '19 May 2026',
+    title: 'Job duplication',
+    description: 'Copy icon on each job in the dashboard. Duplicates the job settings and rows as a new draft job and navigates directly to it. No need to reconfigure settings for repeat runs.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
+    version: 'v2.2',
+    date: '19 May 2026',
+    title: 'Re-run single row',
+    description: 'Refresh icon on each result card in the cards view. Click to re-run just that URL through the full pipeline without rerunning the whole job. Spins while running, updates the result in place.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
+    version: 'v2.1',
+    date: '19 May 2026',
+    title: 'Results table view',
+    description: 'Toggle between Cards and Table view on the job results page. Table shows URL, keyword, source, scrape status, AI Overview, PAA count, FAQ count, and status for all rows at a glance. Click any row to open it in card view.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
+    version: 'v2.0',
+    date: '19 May 2026',
+    title: 'Version bump to v2',
+    description: 'Product is now public-facing with a real domain and landing page. Shifting from Streamlit parity work to genuine new features. v1.x = SaaS conversion. v2.x = product features.',
+    type: 'improvement' as const,
+    tool: 'Platform' as const,
+  },
+  {
     version: 'v1.31',
     date: '19 May 2026',
     title: 'Landing page',
