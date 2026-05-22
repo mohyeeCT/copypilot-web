@@ -11,6 +11,22 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v3.0',
+    date: '22 May 2026',
+    title: 'Job templates',
+    description: 'Save any job configuration as a named template. Templates appear at the top of the new job form. Click to load all settings instantly - provider, business type, brand name, FAQ count, forbidden phrases, batch size, GSC and scrape toggles. Delete templates on hover. Scoped per tool and per user.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
+    version: 'v2.9',
+    date: '22 May 2026',
+    title: 'Brand profile',
+    description: 'Full brand profile card in Settings. Nine fields: brand name, tone, brand voice, target audience, USPs, key messages, products/services, competitors, words to avoid, and example copy. Stored once, injected into every prompt automatically for both single and batch mode. Brand name pre-fills on every new job. Words to avoid merges with per-job forbidden phrases.',
+    type: 'feature' as const,
+    tool: 'FAQ' as const,
+  },
+  {
     version: 'v2.8',
     date: '21 May 2026',
     title: 'Save site URL + empty state + form validation',
