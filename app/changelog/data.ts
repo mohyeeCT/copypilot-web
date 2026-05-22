@@ -11,6 +11,14 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v2.8',
+    date: '21 May 2026',
+    title: 'Save site URL + empty state + form validation',
+    description: 'GSC site URL now saved with credentials in Settings and pre-filled on every new job - no more re-entering it each time. Empty dashboard now shows a proper onboarding message with a link to Settings. Submitting a job with GSC enabled but no site URL entered now shows a clear error instead of failing silently.',
+    type: 'improvement' as const,
+    tool: 'FAQ' as const,
+  },
+  {
     version: 'v2.7',
     date: '20 May 2026',
     title: 'Saved API credentials',
