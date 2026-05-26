@@ -11,6 +11,14 @@ export type Entry = {
 
 export const changelog: Entry[] = [
   {
+    version: 'v3.1 / intro v1.2',
+    date: '26 May 2026',
+    title: 'Multi-brand profiles',
+    description: 'Replaced the single brand profile with a full brand profiles manager in Settings. Create one profile per client or brand, each with its own voice, tone, audience, USPs, key messages, products, competitors, words to avoid, and example copy. Select which profile to apply when creating a job via a dropdown. The selected profile is fetched at processing time and injected into every prompt. Profiles are shared across FAQ and Page Intro tools from the same Supabase instance.',
+    type: 'feature' as const,
+    tool: 'Platform' as const,
+  },
+  {
     version: 'v3.0',
     date: '22 May 2026',
     title: 'Job templates',
