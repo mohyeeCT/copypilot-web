@@ -43,14 +43,14 @@ export default function ChangelogPage() {
   return (
     <main style={{
       minHeight: '100vh',
-      background: '#0a0a0f',
+      background: '#0f0f17',
       color: '#e8e8f0',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     }}>
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .filter-select {
-          background: #111119;
+          background: #16161f;
           border: 1px solid #1e1e2a;
           border-radius: 6px;
           padding: 5px 28px 5px 10px;
@@ -78,7 +78,7 @@ export default function ChangelogPage() {
         .chevron.open { transform: rotate(180deg); }
         .nav-link { font-size: 13px; color: #6b6b80; text-decoration: none; transition: color 0.15s; }
         .nav-link:hover { color: #e8e8f0; }
-        select option { background: #111119; color: #e8e8f0; }
+        select option { background: #16161f; color: #e8e8f0; }
       `}</style>
 
       {/* Nav */}

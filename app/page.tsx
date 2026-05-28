@@ -44,7 +44,7 @@ export default function HomePage() {
   return (
     <main style={{
       minHeight: '100vh',
-      background: '#0a0a0f',
+      background: '#0f0f17',
       color: '#e8e8f0',
       fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       overflowX: 'hidden',
@@ -59,7 +59,7 @@ export default function HomePage() {
         .anim-3 { animation: fadeUp 0.7s 0.2s ease both; }
         .anim-4 { animation: fadeUp 0.7s 0.3s ease both; }
         .live-dot { width: 5px; height: 5px; border-radius: 50%; background: #00c9a7; display: inline-block; animation: pulse-dot 2s ease-in-out infinite; }
-        .tool-card { background: #111118; border: 1px solid #1e1e2a; border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
+        .tool-card { background: #16161f; border: 1px solid #1e1e2a; border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
         .tool-card.live:hover { border-color: rgba(0,201,167,0.4); transform: translateY(-2px); }
         .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #00c9a7; color: #000; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; letter-spacing: -0.01em; transition: opacity 0.15s, transform 0.15s; font-family: inherit; }
         .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
