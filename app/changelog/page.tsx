@@ -11,10 +11,12 @@ const typeStyles: Record<ChangeType, { label: string; color: string; bg: string;
 
 const toolStyles: Record<string, { color: string; bg: string; border: string }> = {
   FAQ:      { color: '#00c9a7', bg: 'rgba(0,201,167,0.06)',   border: 'rgba(0,201,167,0.18)' },
+  Intro:    { color: '#60a5fa', bg: 'rgba(96,165,250,0.06)',  border: 'rgba(96,165,250,0.18)' },
+  Indexer:  { color: '#f59e0b', bg: 'rgba(245,158,11,0.06)',  border: 'rgba(245,158,11,0.18)' },
   Platform: { color: '#818cf8', bg: 'rgba(129,140,248,0.06)', border: 'rgba(129,140,248,0.18)' },
 }
 
-const ALL_TOOLS = ['All', 'FAQ', 'Platform']
+const ALL_TOOLS = ['All', 'FAQ', 'Intro', 'Indexer', 'Platform']
 const ALL_TYPES: (ChangeType | 'All')[] = ['All', 'feature', 'fix', 'improvement']
 
 export default function ChangelogPage() {
@@ -47,17 +49,36 @@ export default function ChangelogPage() {
     }}>
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        .filter-btn { background: transparent; border: 1px solid #1e1e2a; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; transition: all 0.15s; color: #6b6b80; font-family: inherit; }
-        .filter-btn:hover { border-color: #6b6b80; color: #e8e8f0; }
-        .filter-btn.active { color: #e8e8f0; border-color: #e8e8f0; background: rgba(255,255,255,0.05); }
+        .filter-select {
+          background: #111119;
+          border: 1px solid #1e1e2a;
+          border-radius: 6px;
+          padding: 5px 28px 5px 10px;
+          font-size: 12px;
+          cursor: pointer;
+          color: #9090a8;
+          font-family: inherit;
+          appearance: none;
+          -webkit-appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b6b80' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 9px center;
+          transition: border-color 0.15s, color 0.15s;
+          outline: none;
+        }
+        .filter-select:hover, .filter-select:focus { border-color: #6b6b80; color: #e8e8f0; }
+        .filter-select.active { border-color: #00c9a7; color: #e8e8f0; }
+        .action-btn { background: transparent; border: 1px solid #1e1e2a; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; transition: all 0.15s; color: #6b6b80; font-family: inherit; }
+        .action-btn:hover { border-color: #6b6b80; color: #e8e8f0; }
         .entry-row { border: 1px solid #1e1e2a; border-radius: 10px; overflow: hidden; margin-bottom: 8px; transition: border-color 0.15s; }
         .entry-row:hover { border-color: #2e2e3a; }
         .entry-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; }
-        .entry-body { padding: 0 18px 16px; border-top: 1px solid #1e1e2a; padding-top: 14px; }
+        .entry-body { padding: 14px 18px 16px; border-top: 1px solid #1e1e2a; }
         .chevron { transition: transform 0.2s; color: #6b6b80; font-size: 12px; }
         .chevron.open { transform: rotate(180deg); }
         .nav-link { font-size: 13px; color: #6b6b80; text-decoration: none; transition: color 0.15s; }
         .nav-link:hover { color: #e8e8f0; }
+        select option { background: #111119; color: #e8e8f0; }
       `}</style>
 
       {/* Nav */}
@@ -83,45 +104,38 @@ export default function ChangelogPage() {
         </div>
 
         {/* Filters */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginBottom: 24 }}>
-          {/* Tool filter */}
-          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: 2 }}>App</span>
-            {ALL_TOOLS.map(t => (
-              <button
-                key={t}
-                className={`filter-btn ${toolFilter === t ? 'active' : ''}`}
-                onClick={() => setToolFilter(t)}
-                style={toolFilter === t && t !== 'All' ? { borderColor: toolStyles[t]?.color, color: toolStyles[t]?.color, background: toolStyles[t]?.bg } : {}}
-              >
-                {t}
-              </button>
-            ))}
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em' }}>App</span>
+            <select
+              className={`filter-select ${toolFilter !== 'All' ? 'active' : ''}`}
+              value={toolFilter}
+              onChange={e => setToolFilter(e.target.value)}
+            >
+              {ALL_TOOLS.map(t => <option key={t} value={t}>{t}</option>)}
+            </select>
           </div>
 
-          {/* Type filter */}
-          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: 2 }}>Type</span>
-            {ALL_TYPES.map(t => (
-              <button
-                key={t}
-                className={`filter-btn ${typeFilter === t ? 'active' : ''}`}
-                onClick={() => setTypeFilter(t as ChangeType | 'All')}
-                style={typeFilter === t && t !== 'All' ? { borderColor: typeStyles[t as ChangeType]?.color, color: typeStyles[t as ChangeType]?.color, background: typeStyles[t as ChangeType]?.bg } : {}}
-              >
-                {t === 'All' ? 'All' : typeStyles[t as ChangeType].label}
-              </button>
-            ))}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Type</span>
+            <select
+              className={`filter-select ${typeFilter !== 'All' ? 'active' : ''}`}
+              value={typeFilter}
+              onChange={e => setTypeFilter(e.target.value as ChangeType | 'All')}
+            >
+              {ALL_TYPES.map(t => (
+                <option key={t} value={t}>{t === 'All' ? 'All' : typeStyles[t as ChangeType].label}</option>
+              ))}
+            </select>
           </div>
 
-          {/* Expand/collapse all */}
           <div style={{ display: 'flex', gap: 6, marginLeft: 'auto' }}>
-            <button className="filter-btn" onClick={expandAll}>Expand all</button>
-            <button className="filter-btn" onClick={collapseAll}>Collapse all</button>
+            <button className="action-btn" onClick={expandAll}>Expand all</button>
+            <button className="action-btn" onClick={collapseAll}>Collapse all</button>
           </div>
         </div>
 
-        {/* Count */}
+        {/* Count + clear */}
         <p style={{ fontSize: 12, color: '#6b6b80', marginBottom: 16 }}>
           {filtered.length} {filtered.length === 1 ? 'entry' : 'entries'}
           {(toolFilter !== 'All' || typeFilter !== 'All') && (
@@ -136,27 +150,22 @@ export default function ChangelogPage() {
 
         {/* Entries */}
         {filtered.length === 0 && (
-          <p style={{ color: '#6b6b80', fontSize: 14, textAlign: 'center', padding: '40px 0' }}>No entries match the selected filters.</p>
+          <p style={{ color: '#6b6b80', fontSize: 14, textAlign: 'center', padding: '40px 0' }}>No entries match.</p>
         )}
 
         {filtered.map(entry => {
           const ts = typeStyles[entry.type]
-          const tool = toolStyles[entry.tool]
+          const tool = toolStyles[entry.tool] || toolStyles['Platform']
           const isOpen = expanded.has(entry.version)
           return (
             <div key={entry.version} className="entry-row">
               <div className="entry-header" onClick={() => toggle(entry.version)}>
-                {/* Version */}
-                <span style={{ fontFamily: 'monospace', fontSize: 13, fontWeight: 700, color: '#00c9a7', minWidth: 52 }}>
+                <span style={{ fontFamily: 'monospace', fontSize: 12, fontWeight: 700, color: '#00c9a7', minWidth: 52 }}>
                   {entry.version}
                 </span>
-
-                {/* Title */}
                 <span style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.01em', flex: 1 }}>
                   {entry.title}
                 </span>
-
-                {/* Badges */}
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                   <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: tool.color, background: tool.bg, border: `1px solid ${tool.border}`, borderRadius: 4, padding: '2px 7px', whiteSpace: 'nowrap' }}>
                     {entry.tool}
@@ -168,7 +177,6 @@ export default function ChangelogPage() {
                   <span className={`chevron ${isOpen ? 'open' : ''}`}>▾</span>
                 </div>
               </div>
-
               {isOpen && (
                 <div className="entry-body">
                   <p style={{ fontSize: 13, color: '#9090a8', lineHeight: 1.65 }}>{entry.description}</p>
@@ -179,7 +187,6 @@ export default function ChangelogPage() {
         })}
       </div>
 
-      {/* Footer */}
       <footer style={{ borderTop: '1px solid #1e1e2a', padding: '20px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 12, color: '#6b6b80' }}>CopyPilot - AI-powered SEO copy production</p>
       </footer>
