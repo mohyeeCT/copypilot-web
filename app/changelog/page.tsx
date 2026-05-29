@@ -43,8 +43,8 @@ export default function ChangelogPage() {
   return (
     <main style={{
       minHeight: '100vh',
-      background: '#0f0f17',
-      color: '#e8e8f0',
+      background: 'var(--bg)',
+      color: 'var(--text)',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     }}>
       <style>{`
@@ -100,13 +100,13 @@ export default function ChangelogPage() {
         {/* Header */}
         <div style={{ marginBottom: 36 }}>
           <h1 style={{ fontSize: 28, fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 8 }}>Changelog</h1>
-          <p style={{ fontSize: 14, color: '#6b6b80' }}>All changes shipped across CopyPilot tools.</p>
+          <p style={{ fontSize: 14, color: 'var(--muted)' }}>All changes shipped across CopyPilot tools.</p>
         </div>
 
         {/* Filters */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10, marginBottom: 20 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em' }}>App</span>
+            <span style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>App</span>
             <select
               className={`filter-select ${toolFilter !== 'All' ? 'active' : ''}`}
               value={toolFilter}
@@ -117,7 +117,7 @@ export default function ChangelogPage() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ fontSize: 11, color: '#6b6b80', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Type</span>
+            <span style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Type</span>
             <select
               className={`filter-select ${typeFilter !== 'All' ? 'active' : ''}`}
               value={typeFilter}
@@ -136,12 +136,12 @@ export default function ChangelogPage() {
         </div>
 
         {/* Count + clear */}
-        <p style={{ fontSize: 12, color: '#6b6b80', marginBottom: 16 }}>
+        <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 16 }}>
           {filtered.length} {filtered.length === 1 ? 'entry' : 'entries'}
           {(toolFilter !== 'All' || typeFilter !== 'All') && (
             <button
               onClick={() => { setToolFilter('All'); setTypeFilter('All') }}
-              style={{ marginLeft: 10, fontSize: 11, color: '#6b6b80', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'inherit' }}
+              style={{ marginLeft: 10, fontSize: 11, color: 'var(--muted)', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'inherit' }}
             >
               Clear filters
             </button>
@@ -150,7 +150,7 @@ export default function ChangelogPage() {
 
         {/* Entries */}
         {filtered.length === 0 && (
-          <p style={{ color: '#6b6b80', fontSize: 14, textAlign: 'center', padding: '40px 0' }}>No entries match.</p>
+          <p style={{ color: 'var(--muted)', fontSize: 14, textAlign: 'center', padding: '40px 0' }}>No entries match.</p>
         )}
 
         {filtered.map(entry => {
@@ -173,7 +173,7 @@ export default function ChangelogPage() {
                   <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: ts.color, background: ts.bg, border: `1px solid ${ts.border}`, borderRadius: 4, padding: '2px 7px', whiteSpace: 'nowrap' }}>
                     {ts.label}
                   </span>
-                  <span style={{ fontSize: 11, color: '#6b6b80', whiteSpace: 'nowrap' }}>{entry.date}</span>
+                  <span style={{ fontSize: 11, color: 'var(--muted)', whiteSpace: 'nowrap' }}>{entry.date}</span>
                   <span className={`chevron ${isOpen ? 'open' : ''}`}>▾</span>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function ChangelogPage() {
       </div>
 
       <footer style={{ borderTop: '1px solid #1e1e2a', padding: '20px 24px', textAlign: 'center' }}>
-        <p style={{ fontSize: 12, color: '#6b6b80' }}>CopyPilot - AI-powered SEO copy production</p>
+        <p style={{ fontSize: 12, color: 'var(--muted)' }}>CopyPilot - AI-powered SEO copy production</p>
       </footer>
     </main>
   )

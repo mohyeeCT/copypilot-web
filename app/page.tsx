@@ -44,8 +44,8 @@ export default function HomePage() {
   return (
     <main style={{
       minHeight: '100vh',
-      background: '#0f0f17',
-      color: '#e8e8f0',
+      background: 'var(--bg)',
+      color: 'var(--text)',
       fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       overflowX: 'hidden',
     }}>
@@ -99,7 +99,7 @@ export default function HomePage() {
           <span style={{ background: 'linear-gradient(135deg, #00c9a7, #00e5c0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>at scale.</span>
         </h1>
 
-        <p className="anim-3" style={{ fontSize: 'clamp(16px, 2.5vw, 19px)', color: '#6b6b80', lineHeight: 1.65, maxWidth: 520, margin: '0 auto 40px' }}>
+        <p className="anim-3" style={{ fontSize: 'clamp(16px, 2.5vw, 19px)', color: 'var(--muted)', lineHeight: 1.65, maxWidth: 520, margin: '0 auto 40px' }}>
           A suite of tools built for SEO teams and agencies. Add URLs, configure once, download production-ready copy.
         </p>
 
@@ -113,7 +113,7 @@ export default function HomePage() {
       <section style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px 100px', position: 'relative', zIndex: 1 }}>
         <div style={{ marginBottom: 40, textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 10 }}>The suite</h2>
-          <p style={{ fontSize: 14, color: '#6b6b80' }}>Each tool handles one content type. All share the same keyword pipeline and AI providers.</p>
+          <p style={{ fontSize: 14, color: 'var(--muted)' }}>Each tool handles one content type. All share the same keyword pipeline and AI providers.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
@@ -127,17 +127,17 @@ export default function HomePage() {
                   </span>
                 </div>
                 <h3 style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 8 }}>{tool.name}</h3>
-                <p style={{ fontSize: 13, color: '#6b6b80', lineHeight: 1.6 }}>{tool.description}</p>
+                <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>{tool.description}</p>
                 <div style={{ marginTop: 20, fontSize: 12, color: '#00c9a7', fontWeight: 600 }}>Open tool →</div>
               </a>
             ) : (
               <div key={tool.slug} className="tool-card" style={{ opacity: 0.6 }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
                   <span style={{ fontSize: 28 }}>{tool.icon}</span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#6b6b80', background: 'rgba(107,107,128,0.08)', border: '1px solid rgba(107,107,128,0.15)', borderRadius: 20, padding: '3px 10px' }}>Soon</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--muted)', background: 'rgba(107,107,128,0.08)', border: '1px solid rgba(107,107,128,0.15)', borderRadius: 20, padding: '3px 10px' }}>Soon</span>
                 </div>
                 <h3 style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 8 }}>{tool.name}</h3>
-                <p style={{ fontSize: 13, color: '#6b6b80', lineHeight: 1.6 }}>{tool.description}</p>
+                <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>{tool.description}</p>
               </div>
             )
           ))}
@@ -148,7 +148,7 @@ export default function HomePage() {
       <section style={{ borderTop: '1px solid #1e1e2a', padding: '80px 24px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,201,167,0.04) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 16 }}>Start generating copy today.</h2>
-        <p style={{ fontSize: 15, color: '#6b6b80', marginBottom: 32 }}>FAQ Copy is live and free to try. No credit card required.</p>
+        <p style={{ fontSize: 15, color: 'var(--muted)', marginBottom: 32 }}>FAQ Copy is live and free to try. No credit card required.</p>
         <a href="https://faq.copypilot.app" className="cta-btn">Get started →</a>
       </section>
 
@@ -156,7 +156,7 @@ export default function HomePage() {
       <footer style={{ borderTop: '1px solid #1e1e2a', padding: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1100, margin: '0 auto', flexWrap: 'wrap', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <img src="/favicon-32x32.png" alt="CopyPilot" style={{ width: 18, height: 18 }} />
-          <span style={{ fontSize: 13, color: '#6b6b80' }}>CopyPilot</span>
+          <span style={{ fontSize: 13, color: 'var(--muted)' }}>CopyPilot</span>
         </div>
         <div style={{ display: 'flex', gap: 20 }}>
           <a href="https://faq.copypilot.app" className="nav-link">FAQ Copy</a>
