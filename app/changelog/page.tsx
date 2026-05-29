@@ -50,8 +50,8 @@ export default function ChangelogPage() {
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .filter-select {
-          background: #16161f;
-          border: 1px solid #1e1e2a;
+          background: var(--surface);
+          border: 1px solid var(--border);
           border-radius: 6px;
           padding: 5px 28px 5px 10px;
           font-size: 12px;
@@ -66,23 +66,23 @@ export default function ChangelogPage() {
           transition: border-color 0.15s, color 0.15s;
           outline: none;
         }
-        .filter-select:hover, .filter-select:focus { border-color: #6b6b80; color: #e8e8f0; }
+        .filter-select:hover, .filter-select:focus { border-color: var(--muted); color: #e8e8f0; }
         .filter-select.active { border-color: #00c9a7; color: #e8e8f0; }
-        .action-btn { background: transparent; border: 1px solid #1e1e2a; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; transition: all 0.15s; color: #6b6b80; font-family: inherit; }
-        .action-btn:hover { border-color: #6b6b80; color: #e8e8f0; }
-        .entry-row { border: 1px solid #1e1e2a; border-radius: 10px; overflow: hidden; margin-bottom: 8px; transition: border-color 0.15s; }
+        .action-btn { background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; transition: all 0.15s; color: var(--muted); font-family: inherit; }
+        .action-btn:hover { border-color: var(--muted); color: #e8e8f0; }
+        .entry-row { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 8px; transition: border-color 0.15s; }
         .entry-row:hover { border-color: #2e2e3a; }
         .entry-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; }
-        .entry-body { padding: 14px 18px 16px; border-top: 1px solid #1e1e2a; }
-        .chevron { transition: transform 0.2s; color: #6b6b80; font-size: 12px; }
+        .entry-body { padding: 14px 18px 16px; border-top: 1px solid var(--border); }
+        .chevron { transition: transform 0.2s; color: var(--muted); font-size: 12px; }
         .chevron.open { transform: rotate(180deg); }
-        .nav-link { font-size: 13px; color: #6b6b80; text-decoration: none; transition: color 0.15s; }
+        .nav-link { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
         .nav-link:hover { color: #e8e8f0; }
-        select option { background: #16161f; color: #e8e8f0; }
+        select option { background: var(--surface); color: var(--text); }
       `}</style>
 
       {/* Nav */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid #1e1e2a', background: 'rgba(10,10,15,0.9)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid var(--border)', background: 'color-mix(in srgb, var(--bg) 92%, transparent)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <a href="https://copypilot.app" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', color: 'inherit' }}>
             <img src="/favicon-32x32.png" alt="CopyPilot" style={{ width: 20, height: 20 }} />
@@ -187,7 +187,7 @@ export default function ChangelogPage() {
         })}
       </div>
 
-      <footer style={{ borderTop: '1px solid #1e1e2a', padding: '20px 24px', textAlign: 'center' }}>
+      <footer style={{ borderTop: '1px solid var(--border)', padding: '20px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 12, color: 'var(--muted)' }}>CopyPilot - AI-powered SEO copy production</p>
       </footer>
     </main>

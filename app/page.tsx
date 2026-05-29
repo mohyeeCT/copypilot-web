@@ -59,11 +59,11 @@ export default function HomePage() {
         .anim-3 { animation: fadeUp 0.7s 0.2s ease both; }
         .anim-4 { animation: fadeUp 0.7s 0.3s ease both; }
         .live-dot { width: 5px; height: 5px; border-radius: 50%; background: #00c9a7; display: inline-block; animation: pulse-dot 2s ease-in-out infinite; }
-        .tool-card { background: #16161f; border: 1px solid #1e1e2a; border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
+        .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
         .tool-card.live:hover { border-color: rgba(0,201,167,0.4); transform: translateY(-2px); }
-        .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #00c9a7; color: #000; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; letter-spacing: -0.01em; transition: opacity 0.15s, transform 0.15s; font-family: inherit; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--bg); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; letter-spacing: -0.01em; transition: opacity 0.15s, transform 0.15s; font-family: inherit; }
         .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-        .ghost-btn { display: inline-flex; align-items: center; background: transparent; color: #6b6b80; font-weight: 500; font-size: 15px; padding: 14px 24px; border-radius: 10px; text-decoration: none; border: 1px solid #1e1e2a; transition: border-color 0.15s, color 0.15s; }
+        .ghost-btn { display: inline-flex; align-items: center; background: transparent; color: var(--muted); font-weight: 500; font-size: 15px; padding: 14px 24px; border-radius: 10px; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.15s, color 0.15s; }
         .ghost-btn:hover { border-color: #6b6b80; color: #e8e8f0; }
         .nav-link { font-size: 13px; color: #6b6b80; text-decoration: none; transition: color 0.15s; }
         .nav-link:hover { color: #e8e8f0; }
@@ -73,7 +73,7 @@ export default function HomePage() {
       <div style={{ position: 'fixed', top: -200, left: '50%', transform: 'translateX(-50%)', width: 800, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,201,167,0.06) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
 
       {/* Nav */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid #1e1e2a', background: 'rgba(10,10,15,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid var(--border)', background: 'color-mix(in srgb, var(--bg) 92%, transparent)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <img src="/favicon-32x32.png" alt="CopyPilot" style={{ width: 22, height: 22 }} />
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Bottom CTA */}
-      <section style={{ borderTop: '1px solid #1e1e2a', padding: '80px 24px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+      <section style={{ borderTop: '1px solid var(--border)', padding: '80px 24px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,201,167,0.04) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 16 }}>Start generating copy today.</h2>
         <p style={{ fontSize: 15, color: 'var(--muted)', marginBottom: 32 }}>FAQ Copy is live and free to try. No credit card required.</p>
@@ -153,7 +153,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid #1e1e2a', padding: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1100, margin: '0 auto', flexWrap: 'wrap', gap: 12 }}>
+      <footer style={{ borderTop: '1px solid var(--border)', padding: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1100, margin: '0 auto', flexWrap: 'wrap', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <img src="/favicon-32x32.png" alt="CopyPilot" style={{ width: 18, height: 18 }} />
           <span style={{ fontSize: 13, color: 'var(--muted)' }}>CopyPilot</span>
